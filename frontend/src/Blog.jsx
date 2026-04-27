@@ -17,7 +17,14 @@ function Blog () {
     </h1>
 
     {posts.map(post => (
-      <div key={post.id} className="bg-white p-6 rounded-xl shadow mb-6">
+      <div key={post.id} className="bg-black p-6 rounded-xl shadow mb-6">
+         {post.image && (
+      <img
+        src={`http://127.0.0.1:8000${post.image}`}
+        className="w-full h-64 object-cover rounded mb-4"
+        alt=""
+      />
+    )}
         <h2 className="text-2xl font-semibold">{post.title}</h2>
         <p className="text-gray-600 mt-2">{post.content}</p>
       </div>
