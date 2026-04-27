@@ -22,7 +22,7 @@ from accounts.views import RegisterView
 urlpatterns = [
     #Blog API
     path('admin/', admin.site.urls),
-    path('api/blog/', include('blog.urls')),
+    path('api/', include('blog.urls')),
     
     # Auth API
     path('api/register', RegisterView.as_view()),
