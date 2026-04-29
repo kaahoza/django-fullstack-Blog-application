@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-=z=22pqse*&s2gph1^!8yxetenyaa=59ad*-^8(i!1j@@cqmg3
 DEBUG = False
 
 
-ALLOWED_HOSTS = ['django-fullstack-blog-application.onrender.com']
+ALLOWED_HOSTS = ['onrender.com']
 # ALLOWED_HOSTS = ['localhost:3000']
 
 
@@ -89,18 +89,12 @@ WSGI_APPLICATION = 'myproject.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/6.0/ref/settings/#databases
 
+import dj_database_url
+from decouple import config
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': config('DB_NAME'),
-        'USER': config('DB_USER'),
-        'PASSWORD': config('DB_PASSWORD'),
-        'HOST': config('DB_HOST'),
-        'PORT': config('DB_PORT'),
-    }
+    'default': dj_database_url.parse(config('DATABASE_URL'))
 }
-
 # Password validation
 # https://docs.djangoproject.com/en/6.0/ref/settings/#auth-password-validators
 
@@ -137,7 +131,7 @@ USE_TZ = True
 
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
