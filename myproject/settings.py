@@ -26,11 +26,10 @@ SECRET_KEY = 'django-insecure-=z=22pqse*&s2gph1^!8yxetenyaa=59ad*-^8(i!1j@@cqmg3
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-<<<<<<< HEAD
+
 ALLOWED_HOSTS = ['django-fullstack-blog-application.onrender.com']
-=======
 # ALLOWED_HOSTS = ['localhost:3000']
->>>>>>> 32fbe59e903d95aba71e7c8c806e80035868e556
+
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",
