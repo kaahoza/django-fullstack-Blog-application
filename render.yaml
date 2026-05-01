@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: blog
+    runtime: python
+    region: frankfurt
+    plan: free
+
+    buildCommand: "./build.sh"
+    startCommand: "gunicorn myproject.wsgi:application"
+
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.9
+      - key: DATABASE_URL
+        sync: false
+      - key: SECRET_KEY
+        sync: false
