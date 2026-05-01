@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-=z=22pqse*&s2gph1^!8yxetenyaa=59ad*-^8(i!1j@@cqmg3
 DEBUG = False
 
 
-ALLOWED_HOSTS = ['onrender.com']
+ALLOWED_HOSTS = ['*']
 # ALLOWED_HOSTS = ['localhost:3000']
 
 
@@ -94,6 +94,7 @@ from decouple import config
 
 
 DATABASES = {
+    
     'default': dj_database_url.config(default=config('DATABASE_URL')),
     'ENGINE': 'django.db.backends.postgresql'
 }
