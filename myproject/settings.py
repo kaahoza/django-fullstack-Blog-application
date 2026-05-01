@@ -93,7 +93,7 @@ import dj_database_url
 from decouple import config
 
 DATABASES = {
-    'default': dj_database_url.parse(config('DATABASE_URL'))
+    'default': dj_database_url.parse('postgresql://ivory_blog_db_user:nFKFgURX2blurQwFBEXzedKcK8ISLuuh@dpg-d7p897ho3t8c73av58c0-a/ivory_blog_db')
 }
 # Password validation
 # https://docs.djangoproject.com/en/6.0/ref/settings/#auth-password-validators
