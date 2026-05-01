@@ -48,6 +48,7 @@ django-fullstack-Blog-application /
 ├── blog/
 ├── users/
 ├── media/
+
 ⚙️ Installed Apps
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -62,8 +63,10 @@ INSTALLED_APPS = [
 
     'blog',
 ]
+
 🌍 CORS Setup
 CORS_ALLOW_ALL_ORIGINS = True
+
 🔐 JWT Authentication
 
 Installed:
@@ -82,13 +85,18 @@ from decouple import config
 
 DATABASES = {
     'default': dj_database_url.parse(config('DATABASE_URL'))
+
 }
+
 📦 Static files
+
 STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR / 'staticfiles'
+
 📤 Media files
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
+
 🚀 Production build script (build.sh)
 #!/usr/bin/env bash
 set -o errexit
@@ -96,6 +104,7 @@ set -o errexit
 pip install -r requirements.txt
 python manage.py migrate
 python manage.py collectstatic --noinput
+
 🌐 Render Deployment (Backend)
 Start Command:
 gunicorn myproject.wsgi:application
@@ -115,7 +124,7 @@ npm install axios
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "https://your-backend.onrender.com/api",
+  baseURL: "https://django-fullstack-blog-application-6.onrender.com/api",
 });
 
 export default API;
@@ -126,14 +135,8 @@ const res = await API.post("/token/", {
 });
 
 localStorage.setItem("access", res.data.access);
-🔐 Auth Header
-const token = localStorage.getItem("access");
 
-API.get("/posts/", {
-  headers: {
-    Authorization: `Bearer ${token}`,
-  },
-});
+
 🌐 Vercel Deployment (Frontend)
 npm run build
 
@@ -142,9 +145,12 @@ Then:
 Push to GitHub
 Import repo in Vercel
 Deploy
+
 🔐 Authentication Flow
 User Login → JWT Token Generated → Stored in LocalStorage → Sent in API Headers
+
 # 🧪 API Endpoints
+
 Auth
 POST /api/token/        → Login
 POST /api/token/refresh → Refresh token
