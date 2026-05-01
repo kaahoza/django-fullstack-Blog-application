@@ -6,11 +6,19 @@ const Login = () => {
     const [password, setPassword] = useState('')
 
     const handleLogin= async() => {
-        const res = await API.post("login/", {username, password})
-        localStorage.setItem("token", res.data.access)
-        setAuthToken(res.data.access)
-        window.location.href = "/"
+        try {
+            const res = await API.post("/token/", {
+                username, password
+            })
 
+            localStorage.setItem("access", res.data.access);
+            localStorage.setItem("refresh", res.data.refresh);
+            
+            alert("Login successful!")
+            } catch(err){
+                alert("failed to login")
+            } 
+            
     }
   return (
     <div className='p-10'>
