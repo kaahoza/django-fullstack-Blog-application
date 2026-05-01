@@ -94,7 +94,7 @@ from decouple import config
 
 
 DATABASES = {
-    'default': dj_database_url.config(default=config('postgresql://ivory_blog_db_user:nFKFgURX2blurQwFBEXzedKcK8ISLuuh@dpg-d7p897ho3t8c73av58c0-a/ivory_blog_db')),
+    'default': dj_database_url.config(default=config('DATABASE_URL')),
     'ENGINE': 'django.db.backends.postgresql'
 }
 # Password validation
