@@ -1,12 +1,12 @@
 services:
   - type: web
-    name: ivory-blog
-    env: python
+    name: blog
+    runtime: python
     region: frankfurt
     plan: free
 
     buildCommand: "./build.sh"
-    startCommand: "gunicorn ivory_eatery.wsgi:application"
+    startCommand: "gunicorn myproject.wsgi:application"
 
     envVars:
       - key: PYTHON_VERSION
