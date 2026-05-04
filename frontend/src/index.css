@@ -1,1 +1,99 @@
-@import "tailwindcss";
+ @import "tailwindcss"; 
+
+
+@theme {
+     --background: 48 100% 99%;
+    --foreground: 30 15% 15%;
+
+    --card: 45 100% 98%;
+    --card-foreground: 30 15% 15%;
+
+    --popover: 45 100% 98%;
+    --popover-foreground: 30 15% 15%;
+
+    --primary: 25 85% 45%;
+    --primary-foreground: 48 100% 99%;
+
+    --secondary: 42 50% 92%;
+    --secondary-foreground: 30 15% 15%;
+
+    --muted: 45 35% 95%;
+    --muted-foreground: 30 8% 55%;
+
+    --accent: 35 75% 85%;
+    --accent-foreground: 30 15% 15%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 48 100% 99%;
+
+    --border: 42 30% 88%;
+    --input: 42 30% 88%;
+    --ring: 25 85% 45%;
+
+    /* Custom design tokens for elegant blog */
+    --ivory-cream: 48 80% 96%;
+    --warm-gold: 35 85% 70%;
+    --rich-brown: 30 25% 25%;
+    --soft-beige: 42 40% 90%;
+    
+   
+    
+    /* Shadows for depth */
+    --shadow-elegant: 0 8px 32px hsl(var(--rich-brown) / 0.08);
+    --shadow-soft: 0 4px 16px hsl(var(--rich-brown) / 0.05);
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+}
+@theme {
+  
+  --font-serif: "Playfair Display", ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  --font-sans: "Inter", "system-ui", sans-serif;
+}
+
+@theme {
+    
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+
+   /* Gradients for elegant effects */
+--background-image-gradient-hero: linear-gradient(135deg, hsl(var(--ivory-cream)), hsl(var(--soft-beige)));
+--background-image-gradient-accent: linear-gradient(90deg, hsl(var(--warm-gold)), hsl(var(--primary)));
+--text-rich-brown: hsl(var(--rich-brown)); 
+}
+ 
+@utility containter {
+    margin-inline: auto;
+    padding-inline: 2rem;
+}
+
+
+@utility text-warm-gold {
+    color: hsl(var(--warm-gold))
+}
+@utility bg-warm-gold {
+    background: hsl(var(--warm-gold))
+}
+@layer base {
+    * {
+       @apply border-[hsl(var(--border))]
+    }
+    body {
+        @apply bg-[hsl(var(--background))] text-[hsl(var(--foreground))];
+    }
+}

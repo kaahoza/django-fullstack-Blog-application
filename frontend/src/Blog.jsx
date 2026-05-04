@@ -14,10 +14,6 @@ function Blog () {
   
   return (
      <div className="max-w-4xl mx-auto  p-10">
-    <h1 className="text-4xl font-bold text-amber-600 mb-6">
-      Ivory Eatery Blog
-    </h1>
-
     {posts.map(post => (
       <div key={post.id} className="bg-black p-6 rounded-xl shadow mb-6">
          {post.image && (
